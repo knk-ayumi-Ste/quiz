@@ -47,12 +47,19 @@ const setupQuiz = () => {
 }
 setupQuiz();
 
+const soundO =document.getElementById('soundO');
+const soundX = document.getElementById('soundX');
+// console.log(soundO)
 const clickHandler = (e) => {
     if(quiz[quizIndex].correct === e.target.textContent){
+        soundO.play()
         window.alert('正解！');
+        // console.log(soundO)
         score++;
     } else {
+        soundX.play()
         window.alert('不正解！');
+
     }
 
     quizIndex++;
